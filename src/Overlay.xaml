@@ -1,0 +1,24 @@
+<Window xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="420" Height="132" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize" Topmost="True" ShowInTaskbar="False" Title="Spotify Overlay">
+ <Window.Resources>
+ <Style TargetType="Button"><Setter Property="Foreground" Value="#F7E6FF"/><Setter Property="Background" Value="Transparent"/><Setter Property="BorderThickness" Value="0"/><Setter Property="Cursor" Value="Hand"/><Setter Property="FontSize" Value="17"/><Setter Property="Width" Value="34"/><Setter Property="Height" Value="30"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border Name="B" Background="{TemplateBinding Background}" CornerRadius="15"><ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="B" Property="Background" Value="#205A3865"/></Trigger><Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.35"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style>
+ </Window.Resources>
+ <Grid Name="Root" Background="Transparent">
+ <Border Margin="4" CornerRadius="18" Opacity="0.6" Name="Scene"><Border.Background><ImageBrush x:Name="GifBrush" Stretch="UniformToFill"/></Border.Background></Border>
+ <Border Name="Tint" Margin="4" CornerRadius="18" Background="#44140720"/>
+ <Button Name="Minimize" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,23,0" Width="8" Height="8" ToolTip="Minimize" Background="#FFCC45"><Button.Template><ControlTemplate TargetType="Button"><Ellipse Fill="{TemplateBinding Background}"/><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter Property="Opacity" Value="0.75"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Button.Template></Button><Button Name="Close" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,9,0" Width="8" Height="8" ToolTip="Close" Background="#FF6058"><Button.Template><ControlTemplate TargetType="Button"><Ellipse Fill="{TemplateBinding Background}"/><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter Property="Opacity" Value="0.75"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Button.Template></Button>
+ <Grid Name="Layout" Margin="22,14,22,12" VerticalAlignment="Bottom">
+ <Grid.ColumnDefinitions><ColumnDefinition Width="108"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+ <Border Name="Artwork" Width="94" Height="94" CornerRadius="10" VerticalAlignment="Center"><Border.Background><ImageBrush x:Name="Cover" Stretch="UniformToFill"/></Border.Background></Border>
+ <StackPanel Name="Info" Grid.Column="1" VerticalAlignment="Center">
+ <TextBlock Name="Song" Text="Ready when you are" Foreground="White" FontFamily="Segoe UI" FontSize="17" FontWeight="SemiBold" TextTrimming="CharacterEllipsis"/>
+ <TextBlock Name="Artist" Text="Play a song on this PC" Foreground="#E4CFEF" FontFamily="Segoe UI" FontSize="12" Margin="0,4,0,10" TextTrimming="CharacterEllipsis"/>
+ <StackPanel Orientation="Horizontal"><Button Name="Previous" ToolTip="Previous song"><Path Data="M 2,2 L 2,18 M 17,3 L 5,10 L 17,17 Z" Fill="White" Stroke="White" StrokeThickness="1.7" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Width="18" Height="18" Stretch="Uniform"/></Button><Button Name="Play"  Margin="7,0" ToolTip="Play or pause"/><Button Name="Next" ToolTip="Next song"><Path Data="M 18,2 L 18,18 M 3,3 L 15,10 L 3,17 Z" Fill="White" Stroke="White" StrokeThickness="1.7" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Width="18" Height="18" Stretch="Uniform"/></Button></StackPanel>
+ <ProgressBar Name="Progress" Height="2" Margin="0,12,0,0" Maximum="100" Foreground="#ECB3FF" Background="#50472D54" BorderThickness="0"/>
+ </StackPanel></Grid>
+ </Grid>
+</Window>
+
+
+
+
+

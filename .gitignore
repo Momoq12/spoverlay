@@ -1,0 +1,8 @@
+app/*error.txt
+app/app-position.txt
+app/verification.txt
+app/preview.png
+*.pdb
+.vs/
+app/transparency.txt
+app/foreground-transparency.txt
